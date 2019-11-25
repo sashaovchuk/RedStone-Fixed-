@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Comic';
+    src: url(../../shared/fonts/2006.ttf);
+}
+
+.container-fluid {
+    width: 80%;
+    padding-left: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 400;
+}
+
+nav {
+    height: 20px;
+    background-color: transparent;
+    padding-right: 70px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-link {
+    padding-right: 20px;
+    height: 20px;
+    font-family: 'Comic';
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    transition: .5s;
+}
+
+.menu-link:hover {
+    text-decoration: none;
+    color: lightslategray;
+}

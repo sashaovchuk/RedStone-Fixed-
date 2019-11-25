@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>About Person:</h2>
+    <hr>
+    <div class="row">
+        <div class="col-sm-6">
+            <img src="https://firebasestorage.googleapis.com/v0/b/redstone-98676.appspot.com/o/image%2Fmanager.png?alt=media&token=4e3202f1-801f-43bf-85b2-41a437120030"
+                alt="">
+        </div>
+        <div class="col-sm-6">
+            <h3>First Name: {{product?.fName}}</h3>
+            <h3>Last Name: {{product?.lName}}</h3>
+            <h3>Phone Number: {{product?.numPhone}}</h3>
+            <button mat-raised-button color="primary" [routerLink]="['/phone-book']">Back</button>
+        </div>
+
+    </div>
+</div>

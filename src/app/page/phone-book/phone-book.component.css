@@ -1,0 +1,29 @@
+.container {
+    padding: 50px;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    cursor: pointer;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+tr {
+    cursor: pointer;
+}
+
+span {
+    visibility: hidden;
+}
+
+.active {
+    color: #000;
+}
+
+.active span {
+    visibility: visible;
+}

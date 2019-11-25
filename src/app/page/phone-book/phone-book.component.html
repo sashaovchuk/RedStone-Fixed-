@@ -1,0 +1,102 @@
+<div class="container">
+    <h2>My phone book!</h2>
+    <hr>
+    <form>
+        <div class="form-group row">
+            <div class="col-10">
+                <input type="text" class="form-control" [(ngModel)]="search" name="search"
+                    placeholder="search text goes here">
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-success" (click)="openModal(addModal)">Add new phone</button>
+            </div>
+        </div>
+    </form>
+
+    <ng-template #addModal>
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">Modal</h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="first name goes here" [(ngModel)]="fName"
+                        name="fName">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="second name goes here" [(ngModel)]="lName"
+                        name="lName">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="+38 (012) 345-67-89"
+                        [textMask]="{mask: phoneMask}" [(ngModel)]="numPhone" name="numPhone">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="modalRef.hide()"
+                (click)="addUser()">Save</button>
+        </div>
+    </ng-template>
+
+    <table class="table table-striped">
+        <thead>
+            <th [class.active]="order === 'fName'" (click)="setOrder('fName')">
+                First Name <span [hidden]="reverse" *ngIf="arrowDown==='▼'">▼</span><span *ngIf="arrowTop==='▲'"
+                    [hidden]="!reverse">▲</span></th>
+            <th [class.active]="order === 'lName'" (click)="setOrder('lName')">
+                Last Name <span [hidden]="reverse" *ngIf="arrowDown==='▼'">▼</span><span *ngIf="arrowTop==='▲'"
+                    [hidden]="!reverse">▲</span></th>
+            <th [class.active]="order === 'numPhone'" (click)="setOrder('numPhone')">
+                Number <span [hidden]="reverse" *ngIf="arrowDown==='▼'">▼</span><span *ngIf="arrowTop==='▲'"
+                    [hidden]="!reverse">▲</span></th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+        <tbody id="tbody">
+            <tr *ngFor="let user of users | filters: search | orderBy: order:reverse:'case-insensitive' ; let i=index">
+                <td [routerLink]="['/products', user.id]">{{user.fName}}</td>
+                <td [routerLink]="['/products', user.id]">{{user.lName}}</td>
+                <td [routerLink]="['/products', user.id]">{{user.numPhone}}</td>
+                <td>
+                    <button type="button" class="btn btn-warning" (click)="openModal(editModal)"
+                        (click)="editUser(user)">Edit</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #editModal>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="editFname" name="editFname">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="editLname" name="editLname">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" [textMask]="{mask: phoneMask}" [(ngModel)]="editNumPhone"
+                    name="editNumPhone">
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modalRef.hide()">Close</button>
+        <button type="button" class="btn btn-success" (click)="modalRef.hide()" (click)="editSaveChange()">Save
+            changes</button>
+    </div>
+</ng-template>

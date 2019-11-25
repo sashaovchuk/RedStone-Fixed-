@@ -1,0 +1,226 @@
+<div>
+    <main>
+        <section id="home">
+            <div class="container-fluid">
+                <div class="wrap">
+                    <div class="form">
+                        <h4>Sent Request</h4>
+                        <!-- <form name="f1" id="firstRequest" class="needs-validation" novalidate>
+                            <input type="email" placeholder="example_email@gmail.com"
+                                pattern="^[a-zA-z0-9_.+-]+@[a-zA-z0-9-]+\.[a-zA-z0-9-.]{2,}$" class="form-control"
+                                aria-describedby="" required="">
+                            <div class="invalid-feedback">Email is not correct</div>
+                            <!-- <input id="email" name="email" [(ngModel)]="email" type="email" placeholder="example_email@gmail.com"
+                                pattern="^[a-zA-z0-9_.+-]+@[a-zA-z0-9-]+\.[a-zA-z0-9-.]{2,}$" class="form-control" #emailControl="ngModel" required>
+                            <div class="validation-error" *ngIf="emailControl.touched && emailControl.invalid ">Email is not correct</div>
+                            <div class="validation-error" *ngIf="emailControl.touched && emailControl.error?.required">Email is not correct</div> - ->
+                            <input type="password" placeholder="Input your password" minlength="8"
+                                pattern="(\w*[A-Z]+\w*\d+\w*)|(\w*\d+\w*[A-Z]+\w*)" class="form-control"
+                                aria-describedby="" required="">
+                            <div class="invalid-feedback">Please write your password.</div>
+                            <button class="btn btn-primary styleBtn" type="submit">Sent</button>
+                        </form> -->
+                        <form #requestForm="ngForm" (ngSubmit)="saveRequest(requestForm)" id="firstRequest" action="">
+                            <div class="form-group">
+                                <input required id="email" [(ngModel)]="request.email" name="email" type="email"
+                                    #email="ngModel" placeholder="example_email@gmail.com"
+                                    pattern="^[a-zA-z0-9_.+-]+@[a-zA-z0-9-]+\.[a-zA-z0-9-.]{2,}$" class="form-control">
+                                <div class="validation-error" *ngIf="email.errors?.required && email.touched">
+                                    Email is required</div>
+                                <div class="validation-error" *ngIf="email.errors?.pattern && email.touched">
+                                    Email is not correct</div>
+                            </div>
+                            <div class="form-group">
+                                <input required id="password" [(ngModel)]="request.password" name="password"
+                                    type="password" #password="ngModel" placeholder="Input your password" minlength="8"
+                                    pattern="(\w*[A-Z]+\w*\d+\w*)|(\w*\d+\w*[A-Z]+\w*)" class="form-control">
+                                <div class="validation-error" *ngIf="password.errors?.required && password.touched">
+                                    Password is required</div>
+                                <div class="validation-error" *ngIf="password.errors?.pattern && password.touched">
+                                    Password is not correct</div>
+                            </div>
+                            <button class="btn btn-primary styleBtn" type="submit">Send</button>
+                        </form>
+                    </div>
+                    <div class="img">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/redstone-98676.appspot.com/o/image%2Fimage.png?alt=media&token=b25a04ec-f3b5-4b63-9b60-4985b3a79da0"
+                            width="400px" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="ourRequirement">
+            <div class="container-fluid">
+                <h2>Our Requirement</h2>
+                <div class="wraper">
+                    <div class="box">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/redstone-98676.appspot.com/o/image%2F1r.png?alt=media&token=6250fdd9-a681-40b6-8d70-722aafa1f800"
+                            alt="">
+                        <p>Front end - HTML5 and CSS3 are main technology of the UI code.<br>(CSS3 can replace JS in
+                            many cases).</p>
+                    </div>
+                    <div class="box">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/redstone-98676.appspot.com/o/image%2F2r.png?alt=media&token=ece7074c-7064-4e44-ac7b-a32d4909450a"
+                            alt="">
+                        <p>Pixel-Perfect level of UI - must be accurate on pixel level to PSD design.</p>
+                    </div>
+                    <div class="box">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/redstone-98676.appspot.com/o/image%2F3r.png?alt=media&token=3769b98b-7ceb-419b-bfe5-e565befde024"
+                            alt="">
+                        <p>Cannot be any copyright mark, link, name, signature, email, images in any of the code files,
+                            files name, project images and any other project asset.</p>
+                    </div>
+                    <div class="box">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/redstone-98676.appspot.com/o/image%2F4r.png?alt=media&token=84d280a7-da6b-40f3-bac4-29e962e5b504"
+                            alt="">
+                        <p>The developer connot use any modules and plugins which are not free to use & with free
+                            license of use</p>
+                    </div>
+                    <div class="box">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/redstone-98676.appspot.com/o/image%2F5r.png?alt=media&token=1482fd06-a77d-4be7-8269-f0a036ef701f"
+                            alt="">
+                        <p>Resolutions ready - link - need all desktops, including large screens and resolutions.</p>
+                    </div>
+                    <div class="box">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/redstone-98676.appspot.com/o/image%2F6r.png?alt=media&token=e13f8112-a92d-4ff8-a585-1b7682e25e33"
+                            alt="">
+                        <p>Code - classes, IDis and script names- required to be named properly - for future editing.
+                        </p>
+                    </div>
+                    <div class="box">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/redstone-98676.appspot.com/o/image%2F7r.png?alt=media&token=c5694ff4-519c-42d7-b058-498c7b57ae24"
+                            alt="">
+                        <p>Sliders with layers & float text required to fit for any responsive layout</p>
+                    </div>
+                    <div class="box">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/redstone-98676.appspot.com/o/image%2F8r.png?alt=media&token=167af3fa-f4f4-4b04-81fc-fccdddd6c9c4"
+                            alt="">
+                        <p>1 element for all layouts - Header, Footer, Body, Menu, fields & forms cannot have duplicate
+                            elements for desktop and mobile (you required to do 1 elements which will fit to all layouts
+                            property).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="help">
+            <h3>Help</h3>
+            <div class="inRow">
+                <div class="imageWithPeople">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/redstone-98676.appspot.com/o/image%2F2.png?alt=media&token=e7fb0cf2-e92c-48d4-b6c8-16f30bfe3529"
+                        width="100%" alt="">
+                </div>
+                <div class="list">
+                    <div class="wrapp">
+                        <ol>
+                            <li>NAME FONTS: <br>
+                                Cosmic Sans MS <br>
+                                TEXT COLOR #272f2f <br>
+                                COLOR BUTTONS (GRADIENT) FROM <b>#fb6a4e</b> TO <b>#ff606a</b></li>
+                            <li>Clean, robust, dynamic & organized <br>
+                                code are essentials!</li>
+                            <li>File names need to be clear and logic. <br>
+                                Back-end files and folders organization - Images, CSS, JS, Fonts, and any other project
+                                asset - required to be in dedicated folders.</li>
+                            <li>Use hover effects, animations and fields validations (e.g. emails, ID, names, phones,
+                                etc..) where possible, keep in mind that sometimes the designers forget to create them.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="weOffer">
+            <div class="container-fluid">
+                <h2>WE OFFER</h2>
+                <div class="wraper">
+                    <div class="boxz">
+                        <div class="boz"></div>
+                        <p>Career growth</p>
+                    </div>
+                    <div class="boxz">
+                        <div class="boz"></div>
+                        <p>Flexible working schedule</p>
+                    </div>
+                    <div class="boxz">
+                        <div class="boz"></div>
+                        <p>Comfortable workplace</p>
+                    </div>
+                    <div class="boxz">
+                        <div class="boz"></div>
+                        <p>Competitive salary<br>according to the <br>
+                            qualifications</p>
+                    </div>
+                    <div class="boxz">
+                        <div class="boz"></div>
+                        <p>Corporate leisure activities</p>
+                    </div>
+                    <div class="boxz">
+                        <div class="boz"></div>
+                        <p>English lessons</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contacts">
+            <div class="container-fluid">
+                <h2>Contacts</h2>
+                <div class="wrap">
+                    <div class="form">
+                        <h4>Sent Request</h4>
+                        <!-- <form id="firstRequest" class="needs-validation" novalidate>
+                            <input type="email" placeholder="example_email@gmail.com"
+                                pattern="^[a-zA-z0-9_.+-]+@[a-zA-z0-9-]+\.[a-zA-z0-9-.]{2,}$" class="form-control"
+                                aria-describedby="" required="">
+                            <div class="invalid-feedback">Email is not correct</div>
+                            <input type="password" placeholder="Input your password" minlength="8"
+                                pattern="(\w*[A-Z]+\w*\d+\w*)|(\w*\d+\w*[A-Z]+\w*)" class="form-control"
+                                aria-describedby="" required="">
+                            <div class="invalid-feedback">Please write your password.</div>
+                            <button class="btn btn-primary styleBtn" type="submit">Sent</button>
+                        </form> -->
+                        <form id="firstRequest" action="">
+                            <div class="form-group">
+                                <input required id="emails" type="email" placeholder="example_email@gmail.com"
+                                    class="form-control">
+                                <!-- <div class="validation-error" *ngIf="emails.errors?.required && emails.touched">
+                                    Email is required</div>
+                                <div class="validation-error" *ngIf="emails.errors?.pattern && emails.touched">
+                                    Email is not correct</div> -->
+                            </div>
+                            <div class="form-group">
+                                <input required id="passwords" type="password" placeholder="Input your password"
+                                    minlength="8" class="form-control">
+                                <!-- <div class="validation-error" *ngIf="passwords.errors?.required && passwords.touched">
+                                    Password is required</div>
+                                <div class="validation-error" *ngIf="passwords.errors?.pattern && passwords.touched">
+                                    Password is not correct</div> -->
+                            </div>
+                            <button class="btn btn-primary styleBtn" type="submit">Send</button>
+                        </form>
+                    </div>
+                    <div class="aboutInfo">
+                        <h4>Get in touch</h4>
+                        <p>Ukraine, Lviv <br>
+                            Telephone: +380509214381 <br>
+                            E-mail: pecodesoftware@gmail.com</p>
+                        <div class="sotial">
+                            <div class="linkedin"></div>
+                            <div class="twitter"></div>
+                            <div class="facebook"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="googleMaps">
+            <div id="map">
+                <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15" (mapClick)="choseLocation($event)">
+                    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                </agm-map>
+            </div>
+        </section>
+        <footer>
+            <div class="createdBy"></div>
+        </footer>
+    </main>
+</div>

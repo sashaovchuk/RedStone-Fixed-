@@ -1,0 +1,63 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "products": [
+    {
+      "id": 2,
+      "fName": "Petro",
+      "lName": "Petriv",
+      "numPhone": "+38 (096) 888-04-12"
+    },
+    {
+      "id": 3,
+      "fName": "Taras",
+      "lName": "Kundyk",
+      "numPhone": "+38 (093) 914-15-23"
+    },
+    {
+      "id": 4,
+      "fName": "Pavlo",
+      "lName": "Pavliv",
+      "numPhone": "+38 (096) 152-93-97"
+    },
+    {
+      "id": 5,
+      "fName": "Stepan",
+      "lName": "Stepniv",
+      "numPhone": "+38 (093) 495-12-87"
+    },
+    {
+      "id": 6,
+      "fName": "Iryna",
+      "lName": "Ryaska",
+      "numPhone": "+38 (095) 253-00-21"
+    },
+    {
+      "id": 7,
+      "fName": "Ivanka",
+      "lName": "Kurban",
+      "numPhone": "+38 (050) 076-54-55"
+    },
+    {
+      "id": 8,
+      "fName": "Ivan",
+      "lName": "Ivanov",
+      "numPhone": "+38 (096) 756-23-25"
+    }
+  ]
+}
